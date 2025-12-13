@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PQRS - AGUARIO. Envía tus Peticiones, Quejas, Reclamos y Sugerencias.">
+    <title>PQRS - AGUARIO</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <a href="index.html">
+                        <img src="assets/images/logo.png" alt="AGUARIO Logo" class="logo-img">
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation -->
+                <nav class="nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="index.html#inicio" class="nav-link">Inicio</a></li>
+                        <li><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+                        <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+                        <li><a href="index.html#proyectos" class="nav-link">Proyectos</a></li>
+                        <li><a href="pqrs.html" class="nav-link active">PQRS</a></li>
+                        <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                    </ul>
+                    <a href="index.html#contacto" class="btn btn-primary">Contáctanos</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- PQRS Hero -->
+    <section class="pqrs-hero">
+        <div class="container">
+            <div class="pqrs-hero-content">
+                <h1>PQRS</h1>
+                <p>Peticiones, Quejas, Reclamos y Sugerencias</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PQRS Section -->
+    <section class="pqrs">
+        <div class="container">
+            <div class="pqrs-content">
+                <div class="pqrs-info">
+                    <h2>¿Cómo podemos ayudarte?</h2>
+                    <p>Tu opinión es muy importante para nosotros. A través de este formulario puedes enviarnos tus
+                        peticiones, quejas, reclamos o sugerencias.</p>
+
+                    <div class="pqrs-features">
+                        <div class="pqrs-feature">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Tiempo de respuesta</h4>
+                                <p>Responderemos en máximo 15 días hábiles</p>
+                            </div>
+                        </div>
+                        <div class="pqrs-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Confidencialidad</h4>
+                                <p>Tus datos están protegidos</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pqrs-note">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>Nota:</strong> Los campos marcados con asterisco (*) son obligatorios. Asegúrate de
+                            proporcionar un correo electrónico válido para recibir la respuesta a tu solicitud.</p>
+                    </div>
+                </div>
+
+                <div class="pqrs-form-container">
+                    <form class="pqrs-form" id="pqrsForm" action="https://formspree.io/f/xovgpnnv" method="POST">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required
+                                placeholder="Ingresa tu nombre completo">
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Correo electrónico *</label>
+                                <input type="email" id="email" name="_replyto" required
+                                    placeholder="ejemplo@correo.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" placeholder="3001234567">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tipo">Tipo de solicitud *</label>
+                            <select id="tipo" name="tipo" required>
+                                <option value="">Seleccione una opción</option>
+                                <option value="Petición">Petición</option>
+                                <option value="Queja">Queja</option>
+                                <option value="Reclamo">Reclamo</option>
+                                <option value="Sugerencia">Sugerencia</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje *</label>
+                            <textarea id="mensaje" name="mensaje" rows="6" required
+                                placeholder="Describe tu solicitud de manera clara y detallada"></textarea>
+                        </div>
+
+                        <!-- Formspree hidden fields -->
+                        <input type="hidden" name="_subject" value="Nueva solicitud PQRS - AGUARIO">
+                        <input type="hidden" name="_next" value="https://oscarjsv.github.io/aguario/Aguario/index.html">
+                        <input type="text" name="_gotcha" style="display:none">
+
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar solicitud
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>AGUARIO</h3>
+                    <p>Asociación de Municipios Eco-Subregión del Guájaro, Canal del Dique y Municipios Ribereños del
+                        Río Magdalena</p>
+                    <p class="footer-legal">NIT: 901812571-7</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Calle 95 No. 47 - 143<br>Barranquilla, Atlántico</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+57 311 603 1497</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>asoaguario@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 AGUARIO. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky WhatsApp Button -->
+    <a href="https://wa.me/573116031497" class="whatsapp-button" target="_blank" rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
