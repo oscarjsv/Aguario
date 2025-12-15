@@ -72,7 +72,7 @@
   /* Transitions */
   --transition-fast: 0.15s ease;
   --transition-base: 0.25s ease;
-  --transition-slow: 0.4s ease;
+  --transition-slow: 0.3s ease;
 }
 
 /* ===================================
@@ -213,25 +213,58 @@ ul {
 }
 
 .logo-section {
-  flex: 0 0 auto; /* Prevent greedy growth pushing things around */
+  flex: 1; /* Allow taking available space */
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  gap: 12px;
+  min-width: 0; /* Crucial for flex child truncation */
+  margin-right: var(--spacing-sm);
 }
 
 .logo-img {
-  height: 60px; /* Sligthly smaller to fit with text */
+  height: 55px;
   width: auto;
+  flex-shrink: 0; /* Prevent logo squishing */
   display: block;
 }
 
 .logo-text {
+  display: none;
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0; /* Allow text to wrap/truncate properly within flex */
+}
+
+.brand-title {
   font-family: var(--font-primary);
   font-weight: 800;
-  font-size: 1.2rem; /* Smaller font to not compete with logo */
-  color: var(--color-secondary);
-  letter-spacing: 0.5px;
+  font-size: 1.1rem;
+  color: var(
+    --color-primary-dark
+  ); /* Use darker green/blue for better contrast */
+  line-height: 1.1;
+  margin-bottom: 2px;
   text-transform: uppercase;
+  white-space: nowrap; /* Keep title on one line if possible */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.brand-subtitle {
+  font-family: var(--font-primary);
+  font-size: 0.55rem;
+  color: var(--color-text-light);
+  line-height: 1.25; /* More breathing room */
+  font-weight: 500; /* Lighter weight */
+  text-transform: none; /* Normal case saves space */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Allow 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Legacy text logo styles - keeping for fallback */
@@ -513,7 +546,7 @@ ul {
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease;
 }
 
 .dot.active {
@@ -1369,6 +1402,19 @@ ul {
 
   .logo-img {
     height: 80px; /* Restore larger logo on big screens */
+  }
+
+  .brand-info {
+    max-width: 450px; /* Allow full text */
+  }
+
+  .brand-title {
+    font-size: 1.5rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.65rem;
+    -webkit-line-clamp: unset; /* Show full text */
   }
 
   /* Layout refinements for big screens */
